@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -17,7 +17,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export const Navbar = () => {
+export const Navbar = ({ isScrollY }: any) => {
   const router = useRouter();
 
   const onToggleLanguageClick = (newLocale: string) => {
@@ -30,14 +30,22 @@ export const Navbar = () => {
     { name: "About", href: "#", current: true },
   ];
 
+  useEffect(() => {
+    console.log("black", isScrollY);
+  }, [isScrollY]);
+
   return (
     <Disclosure
       as="nav"
-      className="fixed w-full -mt-20 transition bg-zinc-800 border-b-zinc-900 border-b-2"
+      className={`fixed w-full transition ${
+        isScrollY
+          ? "bg-zinc-800 bg-opacity-95 border-b-zinc-900 border-b-2"
+          : ""
+      }`}
     >
       {({ open }) => (
         <>
-          <div className="pt-20 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -90,7 +98,7 @@ export const Navbar = () => {
                       <span className="sr-only">Open user menu</span>
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src={"/noimage.png"}
+                        src={"/profile.jpeg"}
                         alt="avatar"
                         width={32}
                         height={32}
