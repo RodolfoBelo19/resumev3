@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import { Footer } from "../Footer";
+import { VideoBackground } from "../VideoBackground";
 
 function HomePage() {
   const [colorHeader, setColorHeader] = useState(false);
@@ -22,25 +23,126 @@ function HomePage() {
   }, []);
 
   const video =
-    // "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
-    // "../../../public/intro.mp4";
-    "https://www.youtube.com/embed/BqFSHbzSs7U?autoplay=1&mute=1";
+    "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4";
+  // "../../../public/intro.mp4";
 
   return (
     <>
       <Navbar isScrollY={colorHeader} />
-      <div className="h-screen">
-        <iframe
-          src={video}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen={true}
-          title="video"
-          width={"100%"}
-          height={"100%"}
-        />
-      </div>
+      <VideoBackground />
       <div className="pt-20">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
+        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
+        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
+        facere harum.
         <Footer />
       </div>
     </>

@@ -40,7 +40,7 @@ export const Navbar = ({ isScrollY }: any) => {
       className={`fixed w-full transition ${
         isScrollY
           ? "bg-zinc-800 bg-opacity-95 border-b-zinc-900 border-b-2"
-          : ""
+          : "bg-zinc-800 bg-opacity-40 border-b-zinc-600 border-b"
       }`}
     >
       {({ open }) => (
