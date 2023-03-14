@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/Navbar";
+import { Main } from "@/components/Main";
 import React, { useEffect, useState } from "react";
 import { Footer } from "../Footer";
-import { VideoBackground } from "../VideoBackground";
+import { ImageOrVideoBackground } from "../ImageOrVideoBackground";
 
 function HomePage() {
   const [colorHeader, setColorHeader] = useState(false);
@@ -29,122 +30,11 @@ function HomePage() {
   return (
     <>
       <Navbar isScrollY={colorHeader} />
-      <VideoBackground />
-      <div className="pt-20">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-        vel explicabo, nam accusantium hic perspiciatis doloribus id eius
-        deserunt repudiandae nesciunt iure, unde, labore magni? Deleniti ad
-        facere harum.
-        <Footer />
+      <ImageOrVideoBackground />
+      <div className="pt-20 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <Main />
       </div>
+      <Footer />
     </>
   );
 }

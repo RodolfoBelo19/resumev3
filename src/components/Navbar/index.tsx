@@ -39,13 +39,13 @@ export const Navbar = ({ isScrollY }: any) => {
       as="nav"
       className={`fixed w-full transition ${
         isScrollY
-          ? "bg-zinc-800 bg-opacity-95 border-b-zinc-900 border-b-2"
-          : "bg-zinc-800 bg-opacity-40 border-b-zinc-600 border-b"
+          ? "bg-black bg-opacity-70"
+          : "bg-black bg-opacity-10"
       }`}
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl pt-2 px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -125,7 +125,7 @@ export const Navbar = ({ isScrollY }: any) => {
                             )}
                           >
                             <UserCircleIcon height={20} width={20} />
-                            profile
+                            Meu perfil
                           </a>
                         )}
                       </Menu.Item>
@@ -139,49 +139,27 @@ export const Navbar = ({ isScrollY }: any) => {
                             )}
                           >
                             <CogIcon height={20} width={20} />
-                            teste
+                            Configurações
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <span
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
-                            )}
-                          >
-                            <ArrowRightOnRectangleIcon height={30} width={30} />
-                            {/* <AuthUser
-                                classNameProps={"w-full"}
-                                user={user}
-                                setUser={setUser}
-                                sign_in={t("sign_in")}
-                                sign_out={t("sign_out")}
-                              /> */}
-                          </span>
+                          <a
+                          href="#"
+                          className={classNames(
+                            active ? "bg-gray-100" : "",
+                            "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
+                          )}
+                        >
+                          <ArrowRightOnRectangleIcon height={20} width={20} />
+                          Sair
+                        </a>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
-
-                {/* <div className="sm:flex hidden gap-3 items-center justify-center p-5">
-                  <button onClick={() => onToggleLanguageClick("pt")}>
-                    <Image src="/br.webp" alt="brazil" width={20} height={20} />
-                  </button>
-                  <button onClick={() => onToggleLanguageClick("en")}>
-                    <Image src="/us.webp" alt="usa" width={20} height={20} />
-                  </button>
-                </div> */}
-
-                {/* {!user?.emailVerified && (
-                  <AuthUser
-                    user={user}
-                    setUser={setUser}
-                    sign_in={t("sign_in")}
-                  />
-                )} */}
               </div>
             </div>
           </div>

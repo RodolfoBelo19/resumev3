@@ -1,10 +1,12 @@
+import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player";
+import backgroundImage from "../../../public/it.jpeg";
 
-export const VideoBackground = () => {
+export const ImageOrVideoBackground = () => {
   return (
     <div className="video-background">
-      <ReactPlayer
+      {/* <ReactPlayer
         url="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
         playing
         loop
@@ -16,6 +18,12 @@ export const VideoBackground = () => {
           top: 0,
           left: 0,
         }}
+      /> */}
+      <Image
+        style={{ objectFit: "cover" }}
+        className="w-full h-screen"
+        src={backgroundImage}
+        alt="img"
       />
       <style jsx>{`
         .video-background {
@@ -32,7 +40,7 @@ export const VideoBackground = () => {
           bottom: 0;
           left: 0;
           right: 0;
-          height: 300px;
+          height: 500px;
           background: linear-gradient(180deg, rgba(0, 0, 0, 0), black);
         }
       `}</style>
