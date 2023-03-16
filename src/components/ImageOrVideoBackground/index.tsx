@@ -40,7 +40,7 @@ export const ImageOrVideoBackground = () => {
           bottom: 0;
           left: 0;
           right: 0;
-          height: 500px;
+          height: 100vh;
           background: linear-gradient(180deg, rgba(0, 0, 0, 0), black);
         }
       `}</style>

@@ -1,3 +1,3 @@
 export const Footer = () => {
-  return <h1>footer</h1>;
+  return <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">...</div>;
 };

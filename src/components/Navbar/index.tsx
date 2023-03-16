@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -30,22 +30,16 @@ export const Navbar = ({ isScrollY }: any) => {
     { name: "About", href: "#", current: true },
   ];
 
-  useEffect(() => {
-    console.log("black", isScrollY);
-  }, [isScrollY]);
-
   return (
     <Disclosure
       as="nav"
       className={`fixed w-full transition ${
-        isScrollY
-          ? "bg-black bg-opacity-70"
-          : "bg-black bg-opacity-10"
+        isScrollY ? "bg-black bg-opacity-70" : "bg-black bg-opacity-10"
       }`}
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl pt-2 px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -70,7 +64,7 @@ export const Navbar = ({ isScrollY }: any) => {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-zinc-900 text-white"
+                            ? "bg-zinc-900 bg-opacity-70 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
@@ -85,7 +79,7 @@ export const Navbar = ({ isScrollY }: any) => {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="rounded-full bg-zinc-700 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-800"
+                  className="rounded-full bg-zinc-900 bg-opacity-70 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -146,15 +140,15 @@ export const Navbar = ({ isScrollY }: any) => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                          href="#"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
-                          )}
-                        >
-                          <ArrowRightOnRectangleIcon height={20} width={20} />
-                          Sair
-                        </a>
+                            href="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
+                            )}
+                          >
+                            <ArrowRightOnRectangleIcon height={20} width={20} />
+                            Sair
+                          </a>
                         )}
                       </Menu.Item>
                     </Menu.Items>
