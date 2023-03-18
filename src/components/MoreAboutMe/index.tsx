@@ -23,17 +23,17 @@ export const MoreAboutMe = () => {
             Hobbies: Entusiasta em tecnologia, livros, games, filmes e séries.
           </SwiperSlide>
           <SwiperSlide className="bg-zinc-900 rounded-md p-5 cursor-pointer">
-            Qualidades: Comunicatico, Simpático, Curioso, Trabalha bem equipe e
+            Qualidades: Comunicativo, Simpático, Curioso, Trabalho bem em equipe e
             Competência técnica.
           </SwiperSlide>
           <SwiperSlide className="bg-zinc-900 rounded-md p-5 cursor-pointer">
             Novidades: A fim de melhorar meu conhecimento profissional, estou me
-            dedicanto ao domínio do inglês.
+            dedicando ao domínio do inglês.
           </SwiperSlide>
           <SwiperSlide className="bg-zinc-900 rounded-md p-5 cursor-pointer">
             O que me move: Ter uma sólida carreira profissional, para garantir
             estabilidade e confiança, para qual darei um futuro melhor para
-            família.
+            minha família.
           </SwiperSlide>
         </Swiper>
       </div>
