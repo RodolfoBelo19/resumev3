@@ -33,7 +33,7 @@ export const Navbar = ({ isScrollY }: any) => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed w-full transition ${
+      className={`fixed w-full z-50 transition ${
         isScrollY ? "bg-black bg-opacity-70" : "bg-black bg-opacity-10"
       }`}
     >

@@ -1,10 +1,7 @@
 import Image from "next/image";
 import profile from "../../../public/profile.jpg";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import Link from "next/link";
 import { ImageOrVideoBackground } from "../ImageOrVideoBackground";
+import { Social } from "../Social";
 
 export const Main = () => {
   return (
@@ -28,20 +25,7 @@ export const Main = () => {
               Download CV
             </button>
           </div>
-          <div className="py-16 flex gap-3">
-            <Link href="" className="hover:bg-sky-800 rounded-sm">
-              <FaLinkedin className="text-white cursor-pointer text-4xl" />
-            </Link>
-            <Link href="" className="hover:bg-zinc-700 rounded-full">
-              <FaGithub className="text-white cursor-pointer text-4xl" />
-            </Link>
-            <Link
-              href=""
-              className="hover:bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 rounded-xl"
-            >
-              <FaInstagram className="text-white cursor-pointer text-4xl rounded" />
-            </Link>
-          </div>
+          <Social classProp="py-16 flex gap-3" />
         </div>
       </div>
     </>

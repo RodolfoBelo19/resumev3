@@ -5,6 +5,8 @@ import { Footer } from "../Footer";
 import { About } from "../About";
 import { Skills } from "../Skills";
 import { Career } from "../Career";
+import { Education } from "../Education";
+import { MoreAboutMe } from "../MoreAboutMe";
 
 function HomePage() {
   const [colorHeader, setColorHeader] = useState(false);
@@ -33,6 +35,8 @@ function HomePage() {
         <About />
         <Skills />
         <Career />
+        <Education />
+        <MoreAboutMe />
         <Footer />
       </div>
     </>
