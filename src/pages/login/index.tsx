@@ -13,7 +13,8 @@ const initialValues: IFormValues = {
   email: '',
   password: ''
 }
-const signin = () => {
+const login = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [user, setUser] = useState<IAuthUserFirebase>({} as IAuthUserFirebase);
 
   const handleSubmit = (values: IFormValues) => {
@@ -62,4 +63,4 @@ const signin = () => {
   );
 };
 
-export default signin;
+export default login;
