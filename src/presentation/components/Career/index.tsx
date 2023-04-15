@@ -70,7 +70,7 @@ export const Career = () => {
       frontend: ["Angular", "Bootstrap"],
       fullstack: [],
       infra: ["Suporte", "Redes", "Servidores", "Linux", "Windows"],
-      period: "Novembro 2014 - Julio 2016",
+      period: "Novembro 2014 - Julho 2016",
     },
   ];
 
