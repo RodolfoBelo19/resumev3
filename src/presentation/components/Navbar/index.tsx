@@ -12,6 +12,10 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import {
+  useThemeSetter,
+  useThemeValue,
+} from "@/presentation/contexts/ThemeContext";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -28,7 +32,16 @@ export const Navbar = ({ isScrollY }: any) => {
   const navigation = [
     { name: "Contact", href: "#", current: true },
     { name: "About", href: "#", current: true },
+    { name: "Skills", href: "#", current: true },
+    { name: "Career", href: "#", current: true },
   ];
+
+  const theme = useThemeValue(); // pego o valor do tema
+  const setTheme = useThemeSetter(); // pego a função que altera o tema
+
+  const toggleTheme = () => {
+    setTheme(!theme);
+  };
 
   return (
     <Disclosure
@@ -74,6 +87,15 @@ export const Navbar = ({ isScrollY }: any) => {
                       </Link>
                     ))}
                   </div>
+                </div>
+                <div className="text-white">
+                  <button
+                    type="button"
+                    className="bg-zinc-900 bg-opacity-70 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-800"
+                    onClick={toggleTheme}
+                  >
+                    {theme ? "🌙" : "☀️"}
+                  </button>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

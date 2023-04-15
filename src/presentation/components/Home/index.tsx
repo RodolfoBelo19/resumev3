@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/Navbar";
-import { Main } from "@/components/Main";
+import { Navbar } from "@/presentation/components/Navbar";
+import { Main } from "@/presentation/components/Main";
 import React, { useEffect, useState } from "react";
 import { Footer } from "../Footer";
 import { About } from "../About";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player";
-import backgroundImage from "../../../public/it.jpeg";
+import backgroundImage from "../../../../public/it.jpeg";
 
 export const ImageOrVideoBackground = () => {
   return (

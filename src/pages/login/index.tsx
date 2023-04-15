@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
 
-import { AuthUser } from "@/components/AuthUser";
+import { AuthUser } from "@/presentation/components/AuthUser";
 import { IAuthUserFirebase } from "@/interfaces/IAuthUserFirebase";
 
 interface IFormValues {

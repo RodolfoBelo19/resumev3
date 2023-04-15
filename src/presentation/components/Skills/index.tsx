@@ -1,15 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-import angular from "../../../public/skills/angular.png";
-import js from "../../../public/skills/js.png";
-import laravel from "../../../public/skills/laravel.png";
-import nest from "../../../public/skills/nestjs.png";
-import outsystems from "../../../public/skills/outsystems.png";
-import python from "../../../public/skills/python.png";
-import react from "../../../public/skills/react.png";
-import vue from "../../../public/skills/vue.png";
-import css from "../../../public/skills/css.png";
-import html from "../../../public/skills/html.png";
+import angular from "../../../../public/skills/angular.png";
+import js from "../../../../public/skills/js.png";
+import laravel from "../../../../public/skills/laravel.png";
+import nest from "../../../../public/skills/nestjs.png";
+import outsystems from "../../../../public/skills/outsystems.png";
+import python from "../../../../public/skills/python.png";
+import react from "../../../../public/skills/react.png";
+import vue from "../../../../public/skills/vue.png";
+import css from "../../../../public/skills/css.png";
+import html from "../../../../public/skills/html.png";
 
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
@@ -29,19 +29,19 @@ export const Skills = () => {
           breakpoints={{
             368: {
               slidesPerView: 3,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
             520: {
               slidesPerView: 4,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
             640: {
               slidesPerView: 4,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
             768: {
               slidesPerView: 5,
-              spaceBetween: 30
+              spaceBetween: 30,
             },
           }}
         >

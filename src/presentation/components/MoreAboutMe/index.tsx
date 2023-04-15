@@ -23,8 +23,8 @@ export const MoreAboutMe = () => {
             Hobbies: Entusiasta em tecnologia, livros, games, filmes e séries.
           </SwiperSlide>
           <SwiperSlide className="bg-zinc-900 rounded-md p-5 cursor-pointer">
-            Qualidades: Comunicativo, Simpático, Curioso, Trabalho bem em equipe e
-            Competência técnica.
+            Qualidades: Comunicativo, Simpático, Curioso, Trabalho bem em equipe
+            e Competência técnica.
           </SwiperSlide>
           <SwiperSlide className="bg-zinc-900 rounded-md p-5 cursor-pointer">
             Novidades: A fim de melhorar meu conhecimento profissional, estou me

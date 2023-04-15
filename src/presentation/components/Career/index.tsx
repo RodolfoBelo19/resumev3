@@ -129,7 +129,7 @@ export const Career = () => {
                       </span>
                     </span>
                   )}
-                  </div>
+                </div>
               </div>
             </div>
           </div>
