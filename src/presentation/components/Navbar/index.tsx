@@ -36,8 +36,8 @@ export const Navbar = ({ isScrollY }: any) => {
     { name: "Career", href: "#", current: true },
   ];
 
-  const theme = useThemeValue(); // pego o valor do tema
-  const setTheme = useThemeSetter(); // pego a função que altera o tema
+  const theme = useThemeValue();
+  const setTheme = useThemeSetter();
 
   const toggleTheme = () => {
     setTheme(!theme);
@@ -47,7 +47,13 @@ export const Navbar = ({ isScrollY }: any) => {
     <Disclosure
       as="nav"
       className={`fixed w-full z-50 transition ${
-        isScrollY ? "bg-black bg-opacity-70" : "bg-black bg-opacity-10"
+        isScrollY
+          ? theme
+            ? "bg-black bg-opacity-80"
+            : "bg-white bg-opacity-80"
+          : theme
+          ? "bg-black bg-opacity-20"
+          : "bg-white bg-opacity-20"
       }`}
     >
       {({ open }) => (
@@ -56,7 +62,17 @@ export const Navbar = ({ isScrollY }: any) => {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-zinc-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button
+                  className={`${
+                    isScrollY
+                      ? theme
+                        ? "text-white hover:bg-zinc-700 hover:text-white"
+                        : "text-black hover:bg-white hover:bg-opacity-50"
+                      : theme
+                      ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
+                      : "text-white hover:bg-white hover:bg-opacity-10"
+                  } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
+                >
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -66,7 +82,17 @@ export const Navbar = ({ isScrollY }: any) => {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex text-white flex-shrink-0 items-center">
+                <div
+                  className={`${
+                    isScrollY
+                      ? theme
+                        ? "text-white"
+                        : "text-black"
+                      : theme
+                      ? "text-white"
+                      : "text-white"
+                  } flex flex-shrink-0 items-center`}
+                >
                   Rodolfo Belo
                 </div>
                 <div className="hidden transition duration-200 sm:ml-6 sm:block">
@@ -75,12 +101,15 @@ export const Navbar = ({ isScrollY }: any) => {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className={classNames(
-                          item.current
+                        className={`${
+                          isScrollY
+                            ? theme
+                              ? "bg-zinc-900 bg-opacity-70 text-white"
+                              : "bg-white bg-opacity-20 text-zinc-800"
+                            : theme
                             ? "bg-zinc-900 bg-opacity-70 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
+                            : "bg-white bg-opacity-20 text-white"
+                        } px-3 py-2 rounded-md text-sm font-medium`}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
@@ -88,20 +117,24 @@ export const Navbar = ({ isScrollY }: any) => {
                     ))}
                   </div>
                 </div>
-                <div className="text-white">
-                  <button
-                    type="button"
-                    className="bg-zinc-900 bg-opacity-70 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-800"
-                    onClick={toggleTheme}
-                  >
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div className="text-white flex items-center mx-5">
+                  <button type="button" onClick={toggleTheme}>
                     {theme ? "🌙" : "☀️"}
                   </button>
                 </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="rounded-full bg-zinc-900 bg-opacity-70 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-800"
+                  className={`${
+                    isScrollY
+                      ? theme
+                        ? "text-white hover:bg-zinc-700 hover:text-white"
+                        : "text-black hover:bg-white hover:bg-opacity-50"
+                      : theme
+                      ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
+                      : "text-white hover:bg-white hover:bg-opacity-10"
+                  } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -187,12 +220,15 @@ export const Navbar = ({ isScrollY }: any) => {
                   key={item.name}
                   as="a"
                   href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-zinc-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
-                  )}
+                  className={`${
+                    isScrollY
+                      ? theme
+                        ? "bg-zinc-900 bg-opacity-70 text-white"
+                        : "bg-white bg-opacity-50 text-zinc-800"
+                      : theme
+                      ? "bg-zinc-900 bg-opacity-70 text-white"
+                      : "bg-white bg-opacity-20 text-white"
+                  } px-3 flex flex-col py-2 rounded-md text-sm font-medium`}
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
