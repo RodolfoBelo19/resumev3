@@ -48,10 +48,10 @@ export const Navbar = ({ isScrollY }: any) => {
       as="nav"
       className={`fixed w-full z-50 transition ${
         isScrollY
-          ? theme
+          ? !theme
             ? "bg-black bg-opacity-80"
             : "bg-white bg-opacity-80"
-          : theme
+          : !theme
           ? "bg-black bg-opacity-20"
           : "bg-white bg-opacity-20"
       }`}
@@ -65,10 +65,10 @@ export const Navbar = ({ isScrollY }: any) => {
                 <Disclosure.Button
                   className={`${
                     isScrollY
-                      ? theme
+                      ? !theme
                         ? "text-white hover:bg-zinc-700 hover:text-white"
                         : "text-black hover:bg-white hover:bg-opacity-50"
-                      : theme
+                      : !theme
                       ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
                       : "text-white hover:bg-white hover:bg-opacity-10"
                   } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
@@ -85,10 +85,10 @@ export const Navbar = ({ isScrollY }: any) => {
                 <div
                   className={`${
                     isScrollY
-                      ? theme
+                      ? !theme
                         ? "text-white"
                         : "text-black"
-                      : theme
+                      : !theme
                       ? "text-white"
                       : "text-white"
                   } flex flex-shrink-0 items-center`}
@@ -103,10 +103,10 @@ export const Navbar = ({ isScrollY }: any) => {
                         href={item.href}
                         className={`${
                           isScrollY
-                            ? theme
+                            ? !theme
                               ? "bg-zinc-900 bg-opacity-70 text-white"
                               : "bg-white bg-opacity-20 text-zinc-800"
-                            : theme
+                            : !theme
                             ? "bg-zinc-900 bg-opacity-70 text-white"
                             : "bg-white bg-opacity-20 text-white"
                         } px-3 py-2 rounded-md text-sm font-medium`}
@@ -128,10 +128,10 @@ export const Navbar = ({ isScrollY }: any) => {
                   type="button"
                   className={`${
                     isScrollY
-                      ? theme
+                      ? !theme
                         ? "text-white hover:bg-zinc-700 hover:text-white"
                         : "text-black hover:bg-white hover:bg-opacity-50"
-                      : theme
+                      : !theme
                       ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
                       : "text-white hover:bg-white hover:bg-opacity-10"
                   } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
@@ -222,10 +222,10 @@ export const Navbar = ({ isScrollY }: any) => {
                   href={item.href}
                   className={`${
                     isScrollY
-                      ? theme
+                      ? !theme
                         ? "bg-zinc-900 bg-opacity-70 text-white"
                         : "bg-white bg-opacity-50 text-zinc-800"
-                      : theme
+                      : !theme
                       ? "bg-zinc-900 bg-opacity-70 text-white"
                       : "bg-white bg-opacity-20 text-white"
                   } px-3 flex flex-col py-2 rounded-md text-sm font-medium`}
