@@ -5,8 +5,8 @@ import {
   BellIcon,
   XMarkIcon,
   ArrowRightOnRectangleIcon,
-  CogIcon,
-  UserCircleIcon,
+  ArrowDownCircleIcon,
+  UsersIcon,
 } from "@heroicons/react/24/outline";
 
 import Link from "next/link";
@@ -168,44 +168,32 @@ export const Navbar = ({ isScrollY }: any) => {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            href="https://wa.me/5521997929884"
+                            target="_blank"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
                             )}
                           >
-                            <UserCircleIcon height={20} width={20} />
-                            Meu perfil
-                          </a>
+                            <UsersIcon height={20} width={20} />
+                            Contate-me
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            href="https://drive.google.com/file/d/1oBVze0__j353SiAmw6uIoKzwRt_vqbkU/view?usp=sharing"
+                            target="_blank"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
                             )}
                           >
-                            <CogIcon height={20} width={20} />
-                            Configurações
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "px-4 py-2 text-sm gap-2 flex items-center text-gray-700"
-                            )}
-                          >
-                            <ArrowRightOnRectangleIcon height={20} width={20} />
-                            Sair
-                          </a>
+                            <ArrowDownCircleIcon height={20} width={20} />
+                            Download CV
+                          </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
