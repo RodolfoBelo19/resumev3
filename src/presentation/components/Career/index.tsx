@@ -79,7 +79,10 @@ export const Career = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8">
+    <div
+      id="carrer"
+      className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8"
+    >
       <div className=" mt-5 gap-20">
         <h1 className="p-5 text-center w-full text-2xl">Carreira</h1>
         {career.map((item, index) => (
@@ -108,51 +111,51 @@ export const Career = () => {
               <h4 className="mt-2">Stack:</h4>
 
               <div className="py-2">
-                <div className={`my-1 text-sm px-5
+                <div
+                  className={`my-1 text-sm px-5
                   ${!theme ? "text-zinc-400" : "text-zinc-500"}
-                `}>
+                `}
+                >
                   {item.fullstack.length > 0 && (
                     <span>
                       <span>FullStack: </span>
-                      <span>
-                        {item.fullstack?.join(", ")}
-                      </span>
+                      <span>{item.fullstack?.join(", ")}</span>
                     </span>
                   )}
                 </div>
-                <div className={`my-1 text-sm px-5
+                <div
+                  className={`my-1 text-sm px-5
                   ${!theme ? "text-zinc-400" : "text-zinc-500"}
-                `}>
+                `}
+                >
                   {item.backend.length > 0 && (
                     <span>
                       <span>Backend: </span>
-                      <span>
-                        {item.backend?.join(", ")}
-                      </span>
+                      <span>{item.backend?.join(", ")}</span>
                     </span>
                   )}
                 </div>
-                <div className={`my-1 text-sm px-5
+                <div
+                  className={`my-1 text-sm px-5
                   ${!theme ? "text-zinc-400" : "text-zinc-500"}
-                `}>
+                `}
+                >
                   {item.frontend.length > 0 && (
                     <span>
                       <span>Frontend: </span>
-                      <span>
-                        {item.frontend?.join(", ")}
-                      </span>
+                      <span>{item.frontend?.join(", ")}</span>
                     </span>
                   )}
                 </div>
-                <div className={`my-1 text-sm px-5
+                <div
+                  className={`my-1 text-sm px-5
                   ${!theme ? "text-zinc-400" : "text-zinc-500"}
-                `}>
+                `}
+                >
                   {item.infra.length > 0 && (
                     <span>
                       <span>Infra: </span>
-                      <span>
-                        {item.infra?.join(", ")}
-                      </span>
+                      <span>{item.infra?.join(", ")}</span>
                     </span>
                   )}
                 </div>

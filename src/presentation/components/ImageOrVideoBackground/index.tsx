@@ -58,7 +58,11 @@ export const ImageOrVideoBackground = () => {
           left: 0;
           right: 0;
           height: 100vh;
-          background: linear-gradient(180deg, rgba(0, 0, 0, 0), ${themeSelected.color});
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0),
+            ${themeSelected.color}
+          );
         }
       `}</style>
     </div>

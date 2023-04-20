@@ -30,10 +30,12 @@ export const Navbar = ({ isScrollY }: any) => {
   };
 
   const navigation = [
-    { name: "Contact", href: "#", current: true },
-    { name: "About", href: "#", current: true },
-    { name: "Skills", href: "#", current: true },
-    { name: "Career", href: "#", current: true },
+    { name: "Home", href: "#home", current: true },
+    { name: "About", href: "#about", current: true },
+    { name: "Skills", href: "#skills", current: true },
+    { name: "Career", href: "#carrer", current: true },
+    { name: "Education", href: "#education", current: true },
+    { name: "More About Me", href: "#more-about-me", current: true },
   ];
 
   const theme = useThemeValue();

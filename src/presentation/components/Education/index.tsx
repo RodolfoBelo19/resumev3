@@ -21,7 +21,10 @@ export const Education = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8">
+    <div
+      id="education"
+      className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8"
+    >
       <div className=" mt-5 gap-20">
         <h1 className="p-5 text-center w-full text-2xl">Educação</h1>
         {career.map((item, index) => (

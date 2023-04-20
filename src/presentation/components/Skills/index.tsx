@@ -18,7 +18,10 @@ SwiperCore.use([Autoplay]);
 
 export const Skills = () => {
   return (
-    <div className="mx-auto md:py-12 py-5 max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div
+      id="skills"
+      className="mx-auto md:py-12 py-5 max-w-7xl px-2 sm:px-6 lg:px-8"
+    >
       <h1 className="p-5 text-2xl">Skills</h1>
       <div className="p-5 rounded-md md:flex gap-20">
         <Swiper

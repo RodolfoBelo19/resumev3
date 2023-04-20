@@ -31,7 +31,7 @@ function HomePage() {
   const theme = useThemeValue();
 
   return (
-    <>
+    <div id="home">
       <Navbar isScrollY={colorHeader} />
       <Main />
       <div
@@ -48,7 +48,7 @@ function HomePage() {
         <MoreAboutMe />
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

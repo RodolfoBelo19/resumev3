@@ -4,7 +4,10 @@ export const About = () => {
   const theme = useThemeValue();
 
   return (
-    <div className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8">
+    <div
+      id="about"
+      className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8"
+    >
       <div
         className={`bg-opacity-90 p-5 rounded-md md:flex gap-20
         ${!theme ? "text-white bg-zinc-900" : "text-black bg-white"}`}
