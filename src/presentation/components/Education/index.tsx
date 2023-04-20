@@ -31,7 +31,7 @@ export const Education = () => {
               ${
                 !theme
                   ? "text-white bg-zinc-800"
-                  : "text-black bg-opacity-40 bg-white"
+                  : "text-black bg-opacity-30 bg-white"
               }`}
             >
               {item.period}
@@ -56,7 +56,7 @@ export const Education = () => {
               {item.details && (
                 <span
                   className={`mt-5 text-sm text-gray-400
-                  ${!theme ? "text-zinc-400" : "text-zinc-500"}`}
+                ${!theme ? "text-zinc-400" : "text-zinc-500"}`}
                 >
                   {item.details}
                 </span>

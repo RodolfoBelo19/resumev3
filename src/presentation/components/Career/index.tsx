@@ -89,7 +89,7 @@ export const Career = () => {
               ${
                 !theme
                   ? "text-white bg-zinc-800"
-                  : "text-black bg-opacity-40 bg-white"
+                  : "text-black bg-opacity-30 bg-white"
               }`}
             >
               {item.period}
