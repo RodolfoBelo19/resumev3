@@ -2,8 +2,11 @@ import Image from "next/image";
 import profile from "../../../../public/profile.jpg";
 import { ImageOrVideoBackground } from "../ImageOrVideoBackground";
 import { Social } from "../Social";
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 
 export const Main = () => {
+  const theme = useThemeValue();
+  
   return (
     <>
       <div className="pt-20 mx-auto max-w-7xl h-screen px-2 sm:px-6 lg:px-8">
@@ -18,10 +21,12 @@ export const Main = () => {
             Rodolfo Belo
           </p>
           <div className="flex gap-2">
-            <button className="bg-cyan-600 text-white shadow-md font-thin p-1 rounded-md w-40">
+            <button className={`${!theme ? "bg-cyan-600 text-white shadow-md" : "bg-white text-black shadow-md"} 
+            font-thin p-1 rounded-md w-40`}>
               Contrate-me
             </button>
-            <button className="bg-cyan-600 text-white shadow-md font-thin p-1 rounded-md w-40">
+            <button className={`${!theme ? "bg-cyan-600 text-white shadow-md" : "bg-white text-black shadow-md"} 
+            font-thin p-1 rounded-md w-40`}>
               Download CV
             </button>
           </div>

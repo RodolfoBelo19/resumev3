@@ -1,3 +1,4 @@
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 import Link from "next/link";
 
 import { FaLinkedin } from "react-icons/fa";
@@ -9,6 +10,8 @@ type SocialProps = {
 };
 
 export const Social = ({ classProp }: SocialProps) => {
+  const theme = useThemeValue();
+  
   return (
     <div className={classProp}>
       <Link href="" className="hover:bg-sky-800 rounded-sm">

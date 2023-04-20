@@ -2,8 +2,23 @@ import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player";
 import backgroundImage from "../../../../public/it.jpeg";
+import backgroundLight from "../../../../public/background_light.jpg";
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 
 export const ImageOrVideoBackground = () => {
+  const theme = useThemeValue();
+
+  const themeCurrent = {
+    dark: {
+      color: "black",
+    },
+    light: {
+      color: "#0c0c0c65",
+    },
+  };
+
+  const themeSelected = !theme ? themeCurrent.dark : themeCurrent.light;
+
   return (
     <div className="video-background">
       {/* <ReactPlayer
@@ -22,8 +37,10 @@ export const ImageOrVideoBackground = () => {
       <Image
         style={{ objectFit: "cover" }}
         className="w-full h-screen"
-        src={backgroundImage}
+        src={!theme ? backgroundImage : backgroundLight}
         alt="img"
+        width={1920}
+        height={1080}
       />
       <style jsx>{`
         .video-background {
@@ -41,7 +58,7 @@ export const ImageOrVideoBackground = () => {
           left: 0;
           right: 0;
           height: 100vh;
-          background: linear-gradient(180deg, rgba(0, 0, 0, 0), black);
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0), ${themeSelected.color});
         }
       `}</style>
     </div>

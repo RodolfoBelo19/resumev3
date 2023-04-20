@@ -70,7 +70,7 @@ export const Navbar = ({ isScrollY }: any) => {
                         : "text-black hover:bg-white hover:bg-opacity-50"
                       : !theme
                       ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
-                      : "text-white hover:bg-white hover:bg-opacity-10"
+                      : "text-zinc-500 hover:bg-white hover:bg-opacity-10"
                   } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
                 >
                   <span className="sr-only">Open main menu</span>
@@ -90,7 +90,7 @@ export const Navbar = ({ isScrollY }: any) => {
                         : "text-black"
                       : !theme
                       ? "text-white"
-                      : "text-white"
+                      : "text-zinc-500"
                   } flex flex-shrink-0 items-center`}
                 >
                   Rodolfo Belo
@@ -108,7 +108,7 @@ export const Navbar = ({ isScrollY }: any) => {
                               : "bg-white bg-opacity-20 text-zinc-800"
                             : !theme
                             ? "bg-zinc-900 bg-opacity-70 text-white"
-                            : "bg-white bg-opacity-20 text-white"
+                            : "bg-white bg-opacity-20 text-zinc-500"
                         } px-3 py-2 rounded-md text-sm font-medium`}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -133,7 +133,7 @@ export const Navbar = ({ isScrollY }: any) => {
                         : "text-black hover:bg-white hover:bg-opacity-50"
                       : !theme
                       ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
-                      : "text-white hover:bg-white hover:bg-opacity-10"
+                      : "text-zinc-500 hover:bg-white hover:bg-opacity-10"
                   } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
                 >
                   <span className="sr-only">View notifications</span>
@@ -227,7 +227,7 @@ export const Navbar = ({ isScrollY }: any) => {
                         : "bg-white bg-opacity-50 text-zinc-800"
                       : !theme
                       ? "bg-zinc-900 bg-opacity-70 text-white"
-                      : "bg-white bg-opacity-20 text-white"
+                      : "bg-white bg-opacity-20 text-zinc-500"
                   } px-3 flex flex-col py-2 rounded-md text-sm font-medium`}
                   aria-current={item.current ? "page" : undefined}
                 >
