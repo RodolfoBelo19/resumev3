@@ -35,7 +35,7 @@ export const Career = () => {
       title: "TL WORKS",
       description: "FrontEnd Developer",
       backend: [],
-      frontend: ["Angular"],
+      frontend: ["Vue.js", "Angular"],
       fullstack: [],
       infra: [],
       period: "Julho 2021 - Janeiro 2022",
@@ -70,8 +70,8 @@ export const Career = () => {
     {
       title: "ZAPPATO",
       description: "Técnico de Tecnologia da Informação",
-      backend: ["Laravel", "MySQL"],
-      frontend: ["Angular", "Bootstrap"],
+      backend: [],
+      frontend: [],
       fullstack: [],
       infra: ["Suporte", "Redes", "Servidores", "Linux", "Windows"],
       period: "Novembro 2014 - Julho 2016",
@@ -108,41 +108,49 @@ export const Career = () => {
               <h4 className="mt-2">Stack:</h4>
 
               <div className="py-2">
-                <div className="my-1 text-sm px-5">
+                <div className={`my-1 text-sm px-5
+                  ${!theme ? "text-zinc-400" : "text-zinc-500"}
+                `}>
                   {item.fullstack.length > 0 && (
                     <span>
-                      <span className="text-gray-400">FullStack: </span>
-                      <span className="text-gray-400">
+                      <span>FullStack: </span>
+                      <span>
                         {item.fullstack?.join(", ")}
                       </span>
                     </span>
                   )}
                 </div>
-                <div className="my-1 text-sm px-5">
+                <div className={`my-1 text-sm px-5
+                  ${!theme ? "text-zinc-400" : "text-zinc-500"}
+                `}>
                   {item.backend.length > 0 && (
                     <span>
-                      <span className="text-gray-400">Backend: </span>
-                      <span className="text-gray-400">
+                      <span>Backend: </span>
+                      <span>
                         {item.backend?.join(", ")}
                       </span>
                     </span>
                   )}
                 </div>
-                <div className="my-1 text-sm px-5">
+                <div className={`my-1 text-sm px-5
+                  ${!theme ? "text-zinc-400" : "text-zinc-500"}
+                `}>
                   {item.frontend.length > 0 && (
                     <span>
-                      <span className="text-gray-400">Frontend: </span>
-                      <span className="text-gray-400">
+                      <span>Frontend: </span>
+                      <span>
                         {item.frontend?.join(", ")}
                       </span>
                     </span>
                   )}
                 </div>
-                <div className="my-1 text-sm px-5">
+                <div className={`my-1 text-sm px-5
+                  ${!theme ? "text-zinc-400" : "text-zinc-500"}
+                `}>
                   {item.infra.length > 0 && (
                     <span>
-                      <span className="text-gray-400">Infra: </span>
-                      <span className="text-gray-400">
+                      <span>Infra: </span>
+                      <span>
                         {item.infra?.join(", ")}
                       </span>
                     </span>
