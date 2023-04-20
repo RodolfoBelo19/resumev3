@@ -7,6 +7,7 @@ import { Skills } from "../Skills";
 import { Career } from "../Career";
 import { Education } from "../Education";
 import { MoreAboutMe } from "../MoreAboutMe";
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 
 function HomePage() {
   const [colorHeader, setColorHeader] = useState(false);
@@ -27,11 +28,19 @@ function HomePage() {
     };
   }, []);
 
+  const theme = useThemeValue();
+
   return (
     <>
       <Navbar isScrollY={colorHeader} />
       <Main />
-      <div className="bg-black text-white">
+      <div
+        className={`${
+          !theme
+            ? "bg-black text-white"
+            : "bg-zinc-200 text-black bg-opacity-90"
+        }`}
+      >
         <About />
         <Skills />
         <Career />

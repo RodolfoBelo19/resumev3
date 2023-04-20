@@ -1,4 +1,8 @@
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
+
 export const Career = () => {
+  const theme = useThemeValue();
+
   const career = [
     {
       title: "MUSICPRO",
@@ -80,11 +84,25 @@ export const Career = () => {
         <h1 className="p-5 text-center w-full text-2xl">Carreira</h1>
         {career.map((item, index) => (
           <div className="md:flex mb-8" key={index}>
-            <div className="bg-zinc-800 h-auto max-h-72 flex flex-col items-center justify-center bg-opacity-70 p-5 md:w-3/12 w-full md:rounded-r-none md:rounded-l-md rounded-t-md">
+            <div
+              className={`h-auto max-h-72 flex flex-col items-center justify-center bg-opacity-70 p-5 md:w-3/12 w-full md:rounded-r-none md:rounded-l-md rounded-t-md
+              ${
+                !theme
+                  ? "text-white bg-zinc-900"
+                  : "text-black bg-opacity-40 bg-white"
+              }`}
+            >
               {item.period}
               <h1 className="text-xl text-center mt-2">{item.title}</h1>
             </div>
-            <div className="bg-zinc-900 flex flex-col md:items-start items-center h-auto max-h-72 bg-opacity-70 p-5 md:w-9/12 w-full md:rounded-l-none md:rounded-r-md rounded-b-md">
+            <div
+              className={`flex flex-col md:items-start items-center h-auto max-h-72 bg-opacity-70 p-5 md:w-9/12 w-full md:rounded-l-none md:rounded-r-md rounded-b-md
+              ${
+                !theme
+                  ? "text-white bg-zinc-900"
+                  : "text-black bg-opacity-90 bg-white"
+              }`}
+            >
               <h1 className="text-xl">{item.description}</h1>
 
               <h4 className="mt-2">Stack:</h4>
