@@ -88,7 +88,7 @@ export const Career = () => {
               className={`h-auto max-h-72 flex flex-col items-center justify-center bg-opacity-70 p-5 md:w-3/12 w-full md:rounded-r-none md:rounded-l-md rounded-t-md
               ${
                 !theme
-                  ? "text-white bg-zinc-900"
+                  ? "text-white bg-zinc-800"
                   : "text-black bg-opacity-40 bg-white"
               }`}
             >
