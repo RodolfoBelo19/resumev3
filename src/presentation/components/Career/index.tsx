@@ -1,7 +1,24 @@
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export const Career = () => {
   const theme = useThemeValue();
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+    rootMargin: "-50px 0px",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
 
   const career = [
     {
@@ -84,7 +101,14 @@ export const Career = () => {
       className="mx-auto max-w-7xl md:py-12 py-5 px-2 sm:px-6 lg:px-8"
     >
       <div className=" mt-5 gap-20">
-        <h1 className="p-5 text-center w-full text-2xl">Carreira</h1>
+        <motion.div
+          ref={ref}
+          initial={{ y: 50, opacity: 0 }}
+          animate={isVisible ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="p-5 text-center w-full text-2xl">Carreira</h1>
+        </motion.div>
         {career.map((item, index) => (
           <div className="md:flex mb-8" key={index}>
             <div

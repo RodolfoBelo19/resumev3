@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
+
 import {
   Bars3Icon,
   BellIcon,
   XMarkIcon,
-  ArrowRightOnRectangleIcon,
   ArrowDownCircleIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
@@ -16,6 +16,7 @@ import {
   useThemeSetter,
   useThemeValue,
 } from "@/presentation/contexts/ThemeContext";
+import { motion } from "framer-motion";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -23,6 +24,7 @@ function classNames(...classes: any) {
 
 export const Navbar = ({ isScrollY }: any) => {
   const router = useRouter();
+  const [enabled, setEnabled] = useState(false);
 
   const onToggleLanguageClick = (newLocale: string) => {
     const { pathname, asPath, query } = router;
@@ -43,6 +45,18 @@ export const Navbar = ({ isScrollY }: any) => {
 
   const toggleTheme = () => {
     setTheme(!theme);
+    setEnabled(!enabled);
+  };
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.3 },
+    },
+    tap: {
+      scale: 0.9,
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
@@ -60,9 +74,9 @@ export const Navbar = ({ isScrollY }: any) => {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button
                   className={`${
@@ -83,7 +97,7 @@ export const Navbar = ({ isScrollY }: any) => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
                 <div
                   className={`${
                     isScrollY
@@ -97,34 +111,65 @@ export const Navbar = ({ isScrollY }: any) => {
                 >
                   Rodolfo Belo
                 </div>
-                <div className="hidden transition duration-200 sm:ml-6 sm:block">
+                <div className="hidden transition duration-200 md:ml-6 md:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`${
-                          isScrollY
-                            ? !theme
-                              ? "bg-zinc-900 bg-opacity-70 text-white"
-                              : "bg-white bg-opacity-20 text-zinc-800"
-                            : !theme
-                            ? "bg-zinc-900 bg-opacity-70 text-white"
-                            : "bg-white bg-opacity-20 text-zinc-500"
-                        } px-3 py-2 rounded-md text-sm font-medium`}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Link>
+                      <>
+                        <motion.button
+                          className="text=white"
+                          onClick={() => {}}
+                          variants={buttonVariants}
+                          whileHover="hover"
+                          whileTap="tap"
+                        >
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className={`${
+                              isScrollY
+                                ? !theme
+                                  ? "bg-zinc-900 bg-opacity-70 text-white"
+                                  : "bg-white bg-opacity-20 text-zinc-800"
+                                : !theme
+                                ? "bg-zinc-900 bg-opacity-70 text-white"
+                                : "bg-white bg-opacity-20 text-zinc-500"
+                            } px-3 py-2 rounded-md text-sm font-medium`}
+                            aria-current={item.current ? "page" : undefined}
+                          >
+                            {item.name}
+                          </Link>
+                        </motion.button>
+                      </>
                     ))}
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div className="text-white flex items-center mx-5">
-                  <button type="button" onClick={toggleTheme}>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+                <div className="text-white flex items-center md:mx-5 mx-1">
+                  <button
+                    className={`mx-2 ${theme ? "text-black" : "text-white"}`}
+                    onClick={toggleTheme}
+                  >
                     {theme ? "🌙" : "☀️"}
                   </button>
+                  <Switch
+                    checked={enabled}
+                    onChange={toggleTheme}
+                    className={`$
+                    {enabled ? "bg-white" : "bg-white bg-opacity-20"}
+                    md:flex relative hidden inline-flex h-[26px] w-[54px] shrink-0 cursor-pointer rounded-full border border-zinc-600 transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                  >
+                    <span className="sr-only">Use setting</span>
+                    <span
+                      aria-hidden="true"
+                      className={`${
+                        enabled
+                          ? "translate-x-7 bg-zinc-500"
+                          : "translate-x-0 bg-white"
+                      }
+                      pointer-events-none inline-block h-6 w-6 transform rounded-full shadow-lg ring-0 transition duration-500 ease-in-out`}
+                    />
+                  </Switch>
                 </div>
                 <button
                   type="button"
@@ -203,7 +248,7 @@ export const Navbar = ({ isScrollY }: any) => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <Disclosure.Button
