@@ -1,10 +1,4 @@
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { useEffect, useState } from "react";
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { IAuthUserFirebase } from "@/interfaces/IAuthUserFirebase";
 
 import { auth, providerGoogle } from "@/infra/firebase";
@@ -24,7 +18,6 @@ interface AuthUserProps {
 export const AuthUser = ({
   user,
   setUser,
-  sign_in,
   sign_out,
   classNameProps,
 }: AuthUserProps) => {
