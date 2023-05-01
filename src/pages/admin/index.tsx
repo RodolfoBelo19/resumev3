@@ -1,7 +1,9 @@
+import { AdminArea } from "@/presentation/components/AdminArea";
+
 const admin = () => {
   return (
     <div>
-      <h1>Admin</h1>
+      <AdminArea />
     </div>
   );
 };

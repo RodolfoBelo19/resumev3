@@ -7,16 +7,16 @@ import { useInView } from "react-intersection-observer";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import angular from "../../../../public/skills/angular.png";
-import css from "../../../../public/skills/css.png";
-import html from "../../../../public/skills/html.png";
-import js from "../../../../public/skills/js.png";
-import laravel from "../../../../public/skills/laravel.png";
-import nest from "../../../../public/skills/nestjs.png";
-import outsystems from "../../../../public/skills/outsystems.png";
-import python from "../../../../public/skills/python.png";
-import react from "../../../../public/skills/react.png";
-import vue from "../../../../public/skills/vue.png";
+import angular from "../../../../../public/skills/angular.png";
+import css from "../../../../../public/skills/css.png";
+import html from "../../../../../public/skills/html.png";
+import js from "../../../../../public/skills/js.png";
+import laravel from "../../../../../public/skills/laravel.png";
+import nest from "../../../../../public/skills/nestjs.png";
+import outsystems from "../../../../../public/skills/outsystems.png";
+import python from "../../../../../public/skills/python.png";
+import react from "../../../../../public/skills/react.png";
+import vue from "../../../../../public/skills/vue.png";
 
 SwiperCore.use([Autoplay]);
 

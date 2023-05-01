@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profile from "../../../../public/profile.jpg";
+import profile from "../../../../../public/profile.jpg";
 import { ImageOrVideoBackground } from "../ImageOrVideoBackground";
 import { Social } from "../Social";
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";

@@ -1,4 +1,4 @@
-import HomePage from "@/presentation/components/Home";
+import HomePage from "@/presentation/components/HomePage/Home";
 import { NextSeo } from "next-seo";
 
 export default function Home() {
