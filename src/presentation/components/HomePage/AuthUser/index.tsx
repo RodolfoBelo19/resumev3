@@ -5,9 +5,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { IAuthUserFirebase } from "../../../interfaces/IAuthUserFirebase";
+import { IAuthUserFirebase } from "@/interfaces/IAuthUserFirebase";
 
-import { auth, providerGoogle } from "../../../infra/firebase";
+import { auth, providerGoogle } from "@/infra/firebase";
 import { FcGoogle } from "react-icons/fc";
 
 import Link from "next/link";
