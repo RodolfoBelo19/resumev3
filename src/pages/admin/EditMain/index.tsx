@@ -1,7 +1,7 @@
 import { useAuth } from "@/presentation/hooks/useAuth";
 import { useRouter } from "next/router";
 
-const admin = () => {
+const EditMain = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { user } = useAuth();
 
@@ -12,7 +12,8 @@ const admin = () => {
     push("/login");
     return;
   }
-  return <div></div>;
+
+  return <>edit-main</>;
 };
 
-export default admin;
+export default EditMain;

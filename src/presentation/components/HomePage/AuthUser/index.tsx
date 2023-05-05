@@ -7,6 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
+
 interface AuthUserProps {
   user: IAuthUserFirebase | any;
   setUser: (user: IAuthUserFirebase | any) => void;
@@ -53,8 +55,12 @@ export const AuthUser = ({
         </Link>
       )}
       {user && (
-        <button className="w-full text-left" onClick={signOutUser}>
+        <button
+          className="w-full flex items-center justify-end gap-1"
+          onClick={signOutUser}
+        >
           {sign_out}
+          <ArrowRightOnRectangleIcon className="h-4 w-4 text-zinc-300 group-hover:text-white group-focus:text-white" />
         </button>
       )}
     </div>
