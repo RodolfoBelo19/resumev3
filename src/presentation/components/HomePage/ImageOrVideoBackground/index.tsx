@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player";
-import backgroundImage from "../../../../public/it.jpeg";
-import backgroundLight from "../../../../public/background_light.jpg";
+import backgroundImage from "../../../../../public/it.jpeg";
+import backgroundLight from "../../../../../public/background_light.jpg";
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 
 export const ImageOrVideoBackground = () => {

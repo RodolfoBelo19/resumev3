@@ -1,17 +1,13 @@
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { useEffect, useState } from "react";
-import { IAuthUserFirebase } from "../../../interfaces/IAuthUserFirebase";
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
+import { IAuthUserFirebase } from "@/interfaces/IAuthUserFirebase";
 
-import { auth, providerGoogle } from "../../../infra/firebase";
+import { auth, providerGoogle } from "@/infra/firebase";
 import { FcGoogle } from "react-icons/fc";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
 
 interface AuthUserProps {
   user: IAuthUserFirebase | any;
@@ -24,7 +20,6 @@ interface AuthUserProps {
 export const AuthUser = ({
   user,
   setUser,
-  sign_in,
   sign_out,
   classNameProps,
 }: AuthUserProps) => {
@@ -60,8 +55,12 @@ export const AuthUser = ({
         </Link>
       )}
       {user && (
-        <button className="w-full text-left" onClick={signOutUser}>
+        <button
+          className="w-full flex items-center justify-end gap-1"
+          onClick={signOutUser}
+        >
           {sign_out}
+          <ArrowRightOnRectangleIcon className="h-4 w-4 text-zinc-300 group-hover:text-white group-focus:text-white" />
         </button>
       )}
     </div>
