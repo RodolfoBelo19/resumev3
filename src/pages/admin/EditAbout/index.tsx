@@ -1,3 +1,4 @@
+import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
 import { useAuth } from "@/presentation/hooks/useAuth";
 import { Formik, Form } from "formik";
 import { useRouter } from "next/router";
@@ -11,6 +12,7 @@ interface About {
   email: string;
   localization: string;
   language: string[];
+  user_id: string;
 }
 
 const initialValuesSchema: About = {
@@ -21,6 +23,7 @@ const initialValuesSchema: About = {
   email: "",
   localization: "",
   language: [],
+  user_id: "",
 };
 
 const aboutData: About = {
@@ -33,6 +36,7 @@ const aboutData: About = {
   email: "rodolfo.silva.belo@gmail.com",
   localization: "Rio de Janeiro, Brasil",
   language: ["Português", "English"],
+  user_id: "qkeqlklkqjlk",
 };
 
 const EditAbout = () => {
@@ -51,7 +55,12 @@ const EditAbout = () => {
   }
 
   const handleSubmit = async (values: About) => {
-    console.log(values);
+    const httpClient = new AxiosHttpClient();
+
+    httpClient.post({
+      url: "http://localhost:3010/about",
+      body: values,
+    });
   };
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
