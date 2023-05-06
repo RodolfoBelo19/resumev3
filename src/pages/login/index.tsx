@@ -31,11 +31,11 @@ const login = () => {
   }
 
   return (
-    <div className="bg-black flex items-center justify-evenly h-screen text-white">
-      <div className="w-4/12 m-5">
-        <h1 className="text-5xl font-bold">Admin Area</h1>
+    <div className="bg-black p-2 flex md:flex-row flex-col items-center md:justify-evenly justify-center h-screen text-white">
+      <div className="md:w-4/12 w-full m-5">
+        <h1 className="text-5xl text-center font-bold">Admin Area</h1>
       </div>
-      <div className="w-4/12 m-5 bg-zinc-800 flex flex-col p-10 rounded-md">
+      <div className="md:w-4/12 w-full m-5 bg-zinc-800 flex flex-col p-10 rounded-md">
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}
