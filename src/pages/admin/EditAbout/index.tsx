@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 interface About {
+  _id?: string;
   description_pt: string;
   description_en: string;
   age: number;
@@ -26,19 +27,6 @@ const initialValuesSchema: About = {
   user_id: "",
 };
 
-const aboutData: About = {
-  description_pt:
-    "Olá, meu nome é Rodolfo, sou um desenvolvedor. E possuo experiência e interesse em stacks baseadas em JavaScript, PHP e OutSystems. Teve a experiência de trabalhar com frameworks, tais como Laravel, Angular, React e Vue.js. Tem facilidade em trabalhar em equipe e é movido por novos desafios. Um profissional disposto a aprender novas tecnologias, além de prezar pela evolução do time.",
-  description_en:
-    "Hello, my name is Rodolfo, I am a developer. And I have experience and interest in JavaScript, PHP and OutSystems based stacks. He had the experience of working with frameworks, such as Laravel, Angular, React and Vue.js. It is easy to work in a team and is driven by new challenges. A professional willing to learn new technologies, in addition to valuing the evolution of the team.",
-  age: 27,
-  phone: "+55 (21) 9 9792-9884",
-  email: "rodolfo.silva.belo@gmail.com",
-  localization: "Rio de Janeiro, Brasil",
-  language: ["Português", "English"],
-  user_id: "qkeqlklkqjlk",
-};
-
 const EditAbout = () => {
   const [initialValues, setInitialValues] =
     useState<About>(initialValuesSchema);
@@ -47,15 +35,24 @@ const EditAbout = () => {
   const { user } = useAuth();
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { push } = useRouter();
+  const { push, query } = useRouter();
+  const { id } = query;
 
   if (!user) {
     push("/login");
     return;
   }
 
+  const httpClient = new AxiosHttpClient();
+
   const handleSubmit = async (values: About) => {
-    const httpClient = new AxiosHttpClient();
+    if (values._id) {
+      await httpClient.patch({
+        url: `http://localhost:3010/about/${values._id}`,
+        body: values,
+      });
+      return;
+    }
 
     httpClient.post({
       url: "http://localhost:3010/about",
@@ -65,8 +62,16 @@ const EditAbout = () => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    setInitialValues(aboutData);
-  }, []);
+    if (id) {
+      httpClient
+        .get({
+          url: `http://localhost:3010/about/${id}`,
+        })
+        .then((response) => {
+          setInitialValues(response.data);
+        });
+    }
+  }, [id]);
 
   return (
     <Formik
