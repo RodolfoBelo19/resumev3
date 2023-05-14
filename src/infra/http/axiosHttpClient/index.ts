@@ -15,7 +15,7 @@ export class AxiosHttpClient implements HttpPostClient {
     }
     return axiosResponse;
   }
- 
+
   async get(params: HttpGetClient.Params): Promise<any> {
     let axiosResponse: AxiosResponse;
     try {
