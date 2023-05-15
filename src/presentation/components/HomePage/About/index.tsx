@@ -39,12 +39,11 @@ export const About = () => {
           <div className="md:w-1/2 w-full">
             <h1 className="text-2xl">Sobre</h1>
             <p className="mt-5">
-              Experiência e interesse em stacks baseadas em JavaScript, PHP e
-              OutSystems. Teve a experiência de trabalhar com frameworks, tais
-              como Laravel, Angular, React e Vue.js. Tem facilidade em trabalhar
-              em equipe e é movido por novos desafios. Um profissional disposto
-              a aprender novas tecnologias, além de prezar pela evolução do
-              time.
+              Formado em Análise e desenvolvimento de sistemas e atualmente cursando Pós-Graduação em Engenharia de Software, tenho uma sólida experiência de 4 anos no desenvolvimento de sistemas. Minha especialidade está em criar páginas responsivas e visualmente atraentes para dispositivos móveis e desktop.
+
+Possuo habilidades em Laravel, NodeJS, TypeScript, React JS, Next JS, Vue JS e Angular, além de conhecimento em bancos de dados MySQL e MongoDB. Busco constantemente aprimorar minhas habilidades e acompanhar as melhores práticas do mercado.
+
+"Estou sempre em busca de novos desafios e adoro colaborar com equipes talentosas para transformar ideias em realidade."
             </p>
           </div>
           <div className="md:w-1/2 w-full mt-12 md:mt-0">
