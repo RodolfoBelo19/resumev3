@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
+import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
+import { IAbout } from '@/interfaces/IAbout';
 
 export const About = () => {
   const theme = useThemeValue();
 
   const [isVisible, setIsVisible] = useState(false);
+  const [about, setAbout] = useState({} as IAbout);
 
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -15,11 +18,21 @@ export const About = () => {
     rootMargin: "-50px 0px",
   });
 
+  const httpClient = new AxiosHttpClient();
+
   useEffect(() => {
     if (inView) {
       setIsVisible(true);
     }
   }, [inView]);
+
+  useEffect(() => {
+    httpClient
+      .get({ url: "http://localhost:3010/about/64565b07240ac550c34c4f4e" })
+      .then((response) => {
+        setAbout(response.data);
+      });
+  }, []);
 
   return (
     <div
@@ -39,12 +52,8 @@ export const About = () => {
           <div className="md:w-1/2 w-full">
             <h1 className="text-2xl">Sobre</h1>
             <p className="mt-5">
-              Experiência e interesse em stacks baseadas em JavaScript, PHP e
-              OutSystems. Teve a experiência de trabalhar com frameworks, tais
-              como Laravel, Angular, React e Vue.js. Tem facilidade em trabalhar
-              em equipe e é movido por novos desafios. Um profissional disposto
-              a aprender novas tecnologias, além de prezar pela evolução do
-              time.
+              {/* todo: feature: translate to english */}
+              {about?.description_pt}
             </p>
           </div>
           <div className="md:w-1/2 w-full mt-12 md:mt-0">
@@ -54,31 +63,31 @@ export const About = () => {
                 <strong>
                   <span>Idade:</span>
                 </strong>
-                <span>27</span>
+                <span>{about?.age}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Email:</span>
                 </strong>
-                <span>rodolfo.silva.belo@gmail.com</span>
+                <span>{about?.email}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Telefone:</span>
                 </strong>
-                <span>21 99792-9884</span>
+                <span>{about?.phone}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Localização:</span>
                 </strong>
-                <span>Rio de Janeiro, Brasil</span>
+                <span>{about?.localization}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Linguagem:</span>
                 </strong>
-                <span>Português (Nativo), English (Mid level)</span>
+                <span>{about?.language}</span>
               </div>
             </div>
           </div>

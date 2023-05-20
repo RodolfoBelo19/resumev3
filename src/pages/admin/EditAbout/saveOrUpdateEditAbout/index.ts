@@ -1,5 +1,5 @@
+import { IAbout } from '@/interfaces/IAbout';
 import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
-import { IAbout } from "../IAbout";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

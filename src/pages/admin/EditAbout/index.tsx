@@ -3,7 +3,7 @@ import { useAuth } from "@/presentation/hooks/useAuth";
 import { Formik, Form } from "formik";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { IAbout } from "./IAbout";
+import { IAbout } from '@/interfaces/IAbout';
 import { saveOrUpdateEditAbout } from "./saveOrUpdateEditAbout";
 import { ToastContainer } from "react-toastify";
 
