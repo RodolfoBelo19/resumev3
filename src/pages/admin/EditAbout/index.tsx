@@ -42,7 +42,7 @@ const EditAbout = () => {
           url: `http://localhost:3010/about/${id}`,
         })
         .then((response) => {
-          setInitialValues(response.data);
+          setInitialValues(response?.data);
         });
     }
   }, [id]);
@@ -69,7 +69,7 @@ const EditAbout = () => {
                 className="bg-gray-100 border-2 border-gray-300 p-2 rounded-md"
                 name="description_pt"
                 id="description_pt"
-                value={values.description_pt}
+                value={values?.description_pt}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -80,7 +80,7 @@ const EditAbout = () => {
                 className="bg-gray-100 border-2 border-gray-300 p-2 rounded-md"
                 name="description_en"
                 id="description_en"
-                value={values.description_en}
+                value={values?.description_en}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -92,7 +92,7 @@ const EditAbout = () => {
                 type="number"
                 name="age"
                 id="age"
-                value={values.age}
+                value={values?.age}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -104,7 +104,7 @@ const EditAbout = () => {
                 type="text"
                 name="phone"
                 id="phone"
-                value={values.phone}
+                value={values?.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -116,7 +116,7 @@ const EditAbout = () => {
                 type="email"
                 name="email"
                 id="email"
-                value={values.email}
+                value={values?.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -128,7 +128,7 @@ const EditAbout = () => {
                 type="text"
                 name="localization"
                 id="localization"
-                value={values.localization}
+                value={values?.localization}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -141,7 +141,7 @@ const EditAbout = () => {
                 type="text"
                 name="language"
                 id="language"
-                value={values.language}
+                value={values?.language}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
@@ -152,7 +152,7 @@ const EditAbout = () => {
                 className="bg-zinc-700 text-white p-2 md:w-32 rounded-md w-full mt-5"
                 type="submit"
               >
-                {initialValues._id ? "Editar" : "Salvar"}
+                {initialValues?._id ? "Editar" : "Salvar"}
               </button>
             </div>
           </Form>

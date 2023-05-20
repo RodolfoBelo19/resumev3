@@ -30,7 +30,7 @@ export const About = () => {
     httpClient
       .get({ url: "http://localhost:3010/about/64565b07240ac550c34c4f4e" })
       .then((response) => {
-        setAbout(response.data);
+        setAbout(response?.data);
       });
   }, []);
 
