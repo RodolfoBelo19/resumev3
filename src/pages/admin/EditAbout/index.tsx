@@ -1,51 +1,39 @@
-import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
 import { useAuth } from "@/presentation/hooks/useAuth";
 import { Formik, Form } from "formik";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { IAbout } from '@/interfaces/IAbout';
+import { IAbout } from "@/interfaces/IAbout";
 import { saveOrUpdateEditAbout } from "./saveOrUpdateEditAbout";
 import { ToastContainer } from "react-toastify";
-
-const initialValuesSchema: IAbout = {
-  description_pt: "",
-  description_en: "",
-  age: 0,
-  phone: "",
-  email: "",
-  localization: "",
-  language: [],
-  user_id: "",
-};
+import { useFetchData } from "@/presentation/hooks/useFetchData";
 
 const EditAbout = () => {
-  const [initialValues, setInitialValues] =
-    useState<IAbout>(initialValuesSchema);
-
-  const { user } = useAuth();
-
   const { push, query } = useRouter();
   const { id } = query;
+
+  const { user } = useAuth();
+  const { data, isLoading } = useFetchData<IAbout>(`about/${id}`);
 
   if (!user) {
     push("/login");
     return;
   }
 
-  const httpClient = new AxiosHttpClient();
+  let initialValues: IAbout = {
+    description_pt: "",
+    description_en: "",
+    age: 0,
+    phone: "",
+    email: "",
+    localization: "",
+    language: [],
+    user_id: "",
+  };
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    if (id) {
-      httpClient
-        .get({
-          url: `${process.env.NEXT_PUBLIC_API_URL}/about/${id}`,
-        })
-        .then((response) => {
-          setInitialValues(response?.data);
-        });
+  if (id) {
+    if (data) {
+      initialValues = data;
     }
-  }, [id]);
+  }
 
   return (
     <>
