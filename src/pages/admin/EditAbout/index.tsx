@@ -39,7 +39,7 @@ const EditAbout = () => {
     if (id) {
       httpClient
         .get({
-          url: `http://localhost:3010/about/${id}`,
+          url: `${process.env.NEXT_PUBLIC_API_URL}/about/${id}`,
         })
         .then((response) => {
           setInitialValues(response?.data);

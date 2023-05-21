@@ -8,7 +8,7 @@ const httpClient = new AxiosHttpClient();
 export const saveOrUpdateEditAbout = async (values: IAbout) => {
   if (values._id) {
     await httpClient.patch({
-      url: `http://localhost:3010/about/${values._id}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/about/${values._id}`,
       body: values,
     }).then((response) => {
       toast.success("Alterado com sucesso!")
@@ -19,7 +19,7 @@ export const saveOrUpdateEditAbout = async (values: IAbout) => {
   }
 
   httpClient.post({
-    url: "http://localhost:3010/about",
+    url: "${process.env.NEXT_PUBLIC_API_URL}/about",
     body: values,
   });
 };

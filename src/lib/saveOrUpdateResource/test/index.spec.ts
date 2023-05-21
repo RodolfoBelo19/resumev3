@@ -12,7 +12,7 @@ describe('saveOrUpdateResource', () => {
 
   it('should create a new resource', async () => {
     const values = { _id: '1231233' };
-    const url = 'http://localhost:3010/resources';
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/resources`;
     const mockPost = jest.fn();
     httpClient.post = mockPost;
     const mockResponse = {};

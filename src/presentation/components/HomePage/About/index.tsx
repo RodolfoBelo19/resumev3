@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { useFetchData } from "@/presentation/hooks/useFetchData";
 
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
-import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
-import { IAbout } from '@/interfaces/IAbout';
+import { IAbout } from "@/interfaces/IAbout";
 
 export const About = () => {
   const theme = useThemeValue();
 
+  const { data } = useFetchData<IAbout>("about/64565b07240ac550c34c4f4e");
+  const about = data;
+
   const [isVisible, setIsVisible] = useState(false);
-  const [about, setAbout] = useState({} as IAbout);
 
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -18,21 +20,11 @@ export const About = () => {
     rootMargin: "-50px 0px",
   });
 
-  const httpClient = new AxiosHttpClient();
-
   useEffect(() => {
     if (inView) {
       setIsVisible(true);
     }
   }, [inView]);
-
-  useEffect(() => {
-    httpClient
-      .get({ url: "http://localhost:3010/about/64565b07240ac550c34c4f4e" })
-      .then((response) => {
-        setAbout(response?.data);
-      });
-  }, []);
 
   return (
     <div
