@@ -41,4 +41,26 @@ describe('saveOrUpdateEditAbout', () => {
 
     expect(toast.success).toHaveBeenCalledWith('Alterado com sucesso!');
   });
+
+  it('should create a new about', async () => {
+    const values: IAbout = {
+      description_en: 'description_en',
+      description_pt: 'description_pt',
+      email: 'email',
+      phone: 'phone',
+      language: ['en', 'pt'],
+      age: 20,
+      localization: 'localization',
+      user_id: 'user_id',
+    };
+
+    mockedAxiosHttpClient.post.mockResolvedValueOnce({
+      url: `${process.env.NEXT_PUBLIC_API_URL}/about`,
+      body: values,
+    });
+
+    await saveOrUpdateEditAbout(values);
+
+    expect(toast.success).toHaveBeenCalledWith('Salvo com sucesso!');
+  });
 });
