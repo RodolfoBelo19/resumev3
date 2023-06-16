@@ -3,5 +3,6 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     "\\.(css|less)$": "<rootDir>/styleMock.js"
-  }
+  },
+  maxWorkers: 2,
 };

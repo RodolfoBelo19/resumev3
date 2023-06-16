@@ -1,26 +1,24 @@
 import { IAbout } from '@/interfaces/IAbout';
-import { saveOrUpdateEditAbout } from '.';
-import { AxiosHttpClient } from '../../../../infra/http/axiosHttpClient';
-import { toast } from 'react-toastify';
+import { saveOrUpdateEditAbout } from './';
+import { AxiosAboutRepository } from '../../../../infra/http/AxiosAboutRepository';
 
-jest.mock('../../../../infra/http/axiosHttpClient');
-jest.mock('react-toastify');
+// Mocks
+const mockSave = jest.fn();
 
-const mockedAxiosHttpClient = new AxiosHttpClient() as jest.Mocked<AxiosHttpClient>;
+jest.mock('../../../../infra/http/AxiosAboutRepository/index.ts', () => {
+  const originalModule = jest.requireActual('../../../../infra/http/AxiosAboutRepository/index.ts');
+  return {
+    ...originalModule,
+    AxiosAboutRepository: jest.fn().mockImplementation(() => ({
+      save: mockSave,
+    })),
+  };
+});
 
 describe('saveOrUpdateEditAbout', () => {
-  beforeEach(() => {
-    Object.defineProperty(process.env, 'NEXT_PUBLIC_API_URL', {
-      value: 'https://backend-resume.vercel.app',
-    });
-  });
-
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
-  it('should update an existing about', async () => {
-    const values: IAbout = {
+  it('deve chamar o método save do AxiosAboutRepository com o objeto about', async () => {
+    // Arrange
+    const about: IAbout = {
       _id: 'about_id',
       description_en: 'description_en',
       description_pt: 'description_pt',
@@ -32,35 +30,12 @@ describe('saveOrUpdateEditAbout', () => {
       user_id: 'user_id',
     };
 
-    mockedAxiosHttpClient.patch.mockResolvedValueOnce({
-      url: `${process.env.NEXT_PUBLIC_API_URL}/about/${values._id}`,
-      body: values,
-    });
+    // Act
+    await saveOrUpdateEditAbout(about);
 
-    await saveOrUpdateEditAbout(values);
-
-    expect(toast.success).toHaveBeenCalledWith('Alterado com sucesso!');
-  });
-
-  it('should create a new about', async () => {
-    const values: IAbout = {
-      description_en: 'description_en',
-      description_pt: 'description_pt',
-      email: 'email',
-      phone: 'phone',
-      language: ['en', 'pt'],
-      age: 20,
-      localization: 'localization',
-      user_id: 'user_id',
-    };
-
-    mockedAxiosHttpClient.post.mockResolvedValueOnce({
-      url: `${process.env.NEXT_PUBLIC_API_URL}/about`,
-      body: values,
-    });
-
-    await saveOrUpdateEditAbout(values);
-
-    expect(toast.success).toHaveBeenCalledWith('Salvo com sucesso!');
+    // Assert
+    expect(AxiosAboutRepository).toHaveBeenCalledTimes(1);
+    expect(mockSave).toHaveBeenCalledTimes(1);
+    expect(mockSave).toHaveBeenCalledWith(about);
   });
 });
