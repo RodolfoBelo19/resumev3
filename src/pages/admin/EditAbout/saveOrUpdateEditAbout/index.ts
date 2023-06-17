@@ -1,9 +1,8 @@
-import { AxiosAboutRepository } from '../../../../infra/http/AxiosAboutRepository';
-import { AxiosHttpClient } from '../../../../infra/http/axiosHttpClient';
-import { IAbout } from '@/interfaces/IAbout';
+import { IAbout } from '@/domain/AboutRepository/IAbout';
+import { AboutRepository } from '../../../../domain/AboutRepository';
 
 export const saveOrUpdateEditAbout = async (about: IAbout): Promise<void> => {
-  const axiosAboutRepository = new AxiosAboutRepository(new AxiosHttpClient());
+  const aboutRepository = new AboutRepository();
 
-  axiosAboutRepository.save(about);
+  aboutRepository.save(about);
 };

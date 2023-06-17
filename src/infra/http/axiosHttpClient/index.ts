@@ -3,7 +3,7 @@ import { HttpPostClient } from "@/data/protocols/http/httpPostClient";
 import { HttpGetClient } from "@/data/protocols/http/httpGetClient";
 import { HttpPatchClient } from "@/data/protocols/http/httpPatchClient";
 
-export class AxiosHttpClient implements HttpPostClient {
+export class AxiosHttpClient implements HttpPostClient, HttpGetClient, HttpPatchClient {
   async post(params: HttpPostClient.Params): Promise<any> {
     let axiosResponse: AxiosResponse;
     try {
