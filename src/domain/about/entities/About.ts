@@ -1,4 +1,4 @@
-export interface IAbout {
+export interface About {
   _id?: string;
   description_pt: string;
   description_en: string;

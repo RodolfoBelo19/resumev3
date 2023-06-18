@@ -1,22 +1,26 @@
-import { IAbout } from '@/domain/AboutRepository/IAbout';
-import { saveOrUpdateEditAbout } from './';
-import { AboutRepository } from '../../../../domain/AboutRepository';
+import { About } from '../entities/About';
+import { AboutRepository } from './AboutRepository';
 
 const mockSave = jest.fn();
 
-jest.mock('../../../../domain/AboutRepository', () => {
-  const originalModule = jest.requireActual('../../../../domain/AboutRepository');
+jest.mock('./AboutRepository', () => {
+  const { AboutRepository: OriginalAboutRepository } = jest.requireActual('./AboutRepository');
   return {
-    ...originalModule,
-    AboutRepository: jest.fn().mockImplementation(() => ({
-      save: mockSave,
-    })),
+    AboutRepository: class MockAboutRepository extends OriginalAboutRepository {
+      async save(about: About): Promise<void> {
+        mockSave(about);
+      }
+    },
   };
 });
 
-describe('saveOrUpdateEditAbout', () => {
+describe('AboutRepository', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should call the save method of AboutRepository with the about object', async () => {
-    const about: IAbout = {
+    const about: About = {
       _id: 'about_id',
       description_en: 'description_en',
       description_pt: 'description_pt',
@@ -28,15 +32,15 @@ describe('saveOrUpdateEditAbout', () => {
       user_id: 'user_id',
     };
 
-    await saveOrUpdateEditAbout(about);
+    const aboutRepository = new AboutRepository();
+    await aboutRepository.save(about);
 
-    expect(AboutRepository).toHaveBeenCalledTimes(1);
     expect(mockSave).toHaveBeenCalledTimes(1);
     expect(mockSave).toHaveBeenCalledWith(about);
   });
 
   it('should throw an error if the about object is not valid', async () => {
-    const about: IAbout = {
+    const about: About = {
       _id: 'about_id',
       description_en: 'description_en',
       description_pt: 'description_pt',
@@ -52,10 +56,10 @@ describe('saveOrUpdateEditAbout', () => {
       throw new Error('Error');
     });
 
-    await expect(saveOrUpdateEditAbout(about)).rejects.toThrowError('Error');
+    const aboutRepository = new AboutRepository();
 
-    expect(AboutRepository).toHaveBeenCalledTimes(2);
-    expect(mockSave).toHaveBeenCalledTimes(2);
+    await expect(aboutRepository.save(about)).rejects.toThrowError('Error');
+    expect(mockSave).toHaveBeenCalledTimes(1);
     expect(mockSave).toHaveBeenCalledWith(about);
   });
 });

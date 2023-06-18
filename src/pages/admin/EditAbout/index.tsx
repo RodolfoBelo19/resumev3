@@ -1,24 +1,24 @@
 import { useAuth } from "@/presentation/hooks/useAuth";
 import { Formik, Form } from "formik";
 import { useRouter } from "next/router";
-import { IAbout } from "@/interfaces/IAbout";
-import { saveOrUpdateEditAbout } from "./saveOrUpdateEditAbout";
+import { About } from "@/domain/about/entities/About";
 import { ToastContainer } from "react-toastify";
 import { useFetchData } from "@/presentation/hooks/useFetchData";
+import { SaveOrUpdateAboutUseCase } from "@/domain/about/useCases/SaveOrUpdateAboutUseCase";
 
 const EditAbout = () => {
   const { push, query } = useRouter();
   const { id } = query;
 
   const { user } = useAuth();
-  const { data, isLoading } = useFetchData<IAbout>(`about/${id}`);
+  const { data, isLoading } = useFetchData<About>(`about/${id}`);
 
   if (!user) {
     push("/login");
     return;
   }
 
-  let initialValues: IAbout = {
+  let initialValues: About = {
     description_pt: "",
     description_en: "",
     age: 0,
@@ -35,11 +35,17 @@ const EditAbout = () => {
     }
   }
 
+  const saveOrUpdateAboutUseCase = new SaveOrUpdateAboutUseCase();
+
+  const handleSubmit = async (about: About) => {
+    await saveOrUpdateAboutUseCase.execute(about);
+  };
+
   return (
     <>
       <Formik
         initialValues={initialValues}
-        onSubmit={saveOrUpdateEditAbout}
+        onSubmit={handleSubmit}
         enableReinitialize={true}
         className="flex flex-col overflow-y-auto"
       >
@@ -48,7 +54,7 @@ const EditAbout = () => {
             className="p-5"
             onSubmit={(event) => {
               event.preventDefault();
-              saveOrUpdateEditAbout(values);
+              handleSubmit(values);
             }}
           >
             <div className="flex flex-col">
@@ -121,7 +127,6 @@ const EditAbout = () => {
                 onBlur={handleBlur}
               />
             </div>
-            {/* todo: tags input */}
             <div className="flex flex-col mt-5">
               <label htmlFor="language">Idiomas</label>
               <input
@@ -134,7 +139,6 @@ const EditAbout = () => {
                 onBlur={handleBlur}
               />
             </div>
-            {/* todo: tags input */}
             <div className="flex justify-end">
               <button
                 className="bg-zinc-700 text-white p-2 md:w-32 rounded-md w-full mt-5"

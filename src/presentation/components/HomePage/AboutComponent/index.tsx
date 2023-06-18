@@ -4,12 +4,12 @@ import { useInView } from "react-intersection-observer";
 import { useFetchData } from "@/presentation/hooks/useFetchData";
 
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
-import { IAbout } from "@/interfaces/IAbout";
+import { About } from "@/domain/about/entities/About";
 
-export const About = () => {
+export const AboutComponent = () => {
   const theme = useThemeValue();
 
-  const { data } = useFetchData<IAbout>("about/64565b07240ac550c34c4f4e");
+  const { data } = useFetchData<About>("about/64565b07240ac550c34c4f4e");
   const about = data;
 
   const [isVisible, setIsVisible] = useState(false);

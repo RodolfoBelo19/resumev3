@@ -1,8 +1,8 @@
-import { IAbout } from "./IAbout";
-import { BaseRepository } from "../../infra/repositories/BaseRepository";
+import { About } from "../entities/About";
+import { BaseRepository } from "../../../infra/repositories/BaseRepository";
 
-export class AboutRepository extends BaseRepository<IAbout> {
-  async save(about: IAbout): Promise<void> {
+export class AboutRepository extends BaseRepository<About> {
+  async save(about: About): Promise<void> {
     if (about._id) {
       const res = await this.httpClient.patch({
         url: `${process.env.NEXT_PUBLIC_API_URL}/about/${about._id}`,

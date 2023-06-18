@@ -2,7 +2,7 @@ import { Navbar } from "@/presentation/components/HomePage/Navbar";
 import { Main } from "@/presentation/components/HomePage/Main";
 import React, { useEffect, useState } from "react";
 import { Footer } from "../Footer";
-import { About } from "../About";
+import { AboutComponent } from "../AboutComponent";
 import { Skills } from "../Skills";
 import { Career } from "../Career";
 import { Education } from "../Education";
@@ -26,7 +26,7 @@ function HomePage() {
             : "bg-zinc-200 text-black bg-opacity-90"
         }`}
       >
-        <About />
+        <AboutComponent />
         <Skills />
         <Career />
         <Education />
