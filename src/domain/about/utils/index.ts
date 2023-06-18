@@ -1,1 +1,3 @@
-// methods for about page
+export const exampleMethod = () => {
+  return 'exampleMethod';
+}
