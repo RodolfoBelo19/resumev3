@@ -44,7 +44,6 @@ export const AboutComponent = () => {
           <div className="md:w-1/2 w-full">
             <h1 className="text-2xl">Sobre</h1>
             <p className="mt-5">
-              {/* todo: feature: translate to english */}
               {about?.description_pt}
             </p>
           </div>
