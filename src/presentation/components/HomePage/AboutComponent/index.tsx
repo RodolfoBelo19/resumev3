@@ -2,10 +2,20 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
+import { About } from "@/domain/about/entities";
+import { GetAboutUseCase } from "@/domain/about/useCases/GetAboutUseCase";
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
+import { useFetchData } from "@/presentation/hooks/useFetchData";
 
-export const About = () => {
+export const AboutComponent = () => {
   const theme = useThemeValue();
+
+  const getAbout = new GetAboutUseCase();
+  const { data } = useFetchData<About>(
+    "64565b07240ac550c34c4f4e",
+    getAbout
+  );
+  const about = data;
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -38,13 +48,7 @@ export const About = () => {
         >
           <div className="md:w-1/2 w-full">
             <h1 className="text-2xl">Sobre</h1>
-            <p className="mt-5">
-              Formado em Análise e desenvolvimento de sistemas e atualmente cursando Pós-Graduação em Engenharia de Software, tenho uma sólida experiência de 4 anos no desenvolvimento de sistemas. Minha especialidade está em criar páginas responsivas e visualmente atraentes para dispositivos móveis e desktop.
-
-Possuo habilidades em Laravel, NodeJS, TypeScript, React JS, Next JS, Vue JS e Angular, além de conhecimento em bancos de dados MySQL e MongoDB. Busco constantemente aprimorar minhas habilidades e acompanhar as melhores práticas do mercado.
-
-"Estou sempre em busca de novos desafios e adoro colaborar com equipes talentosas para transformar ideias em realidade."
-            </p>
+            <p className="mt-5">{about?.description_pt}</p>
           </div>
           <div className="md:w-1/2 w-full mt-12 md:mt-0">
             <h1 className="text-2xl">Informações</h1>
@@ -53,31 +57,31 @@ Possuo habilidades em Laravel, NodeJS, TypeScript, React JS, Next JS, Vue JS e A
                 <strong>
                   <span>Idade:</span>
                 </strong>
-                <span>27</span>
+                <span>{about?.age}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Email:</span>
                 </strong>
-                <span>rodolfo.silva.belo@gmail.com</span>
+                <span>{about?.email}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Telefone:</span>
                 </strong>
-                <span>21 99792-9884</span>
+                <span>{about?.phone}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Localização:</span>
                 </strong>
-                <span>Rio de Janeiro, Brasil</span>
+                <span>{about?.localization}</span>
               </div>
               <div className="flex gap-2 my-2">
                 <strong>
                   <span>Linguagem:</span>
                 </strong>
-                <span>Português (Nativo), English (Mid level)</span>
+                <span>{about?.language}</span>
               </div>
             </div>
           </div>
