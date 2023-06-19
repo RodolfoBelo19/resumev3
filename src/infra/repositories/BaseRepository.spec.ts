@@ -26,6 +26,18 @@ class UserRepository extends BaseRepository<any> {
 
     return Promise.reject();
   }
+
+  async get(id: string) {
+    const res = await this.httpClient.get({
+      url: `${process.env.NEXT_PUBLIC_API_URL}/users/${id}`,
+    });
+
+    if (res.status === 200) {
+      return Promise.resolve(res.data);
+    }
+
+    return Promise.reject();
+  }
 }
 
 describe('UserRepository', () => {
@@ -39,5 +51,17 @@ describe('UserRepository', () => {
     await repository.save(entity);
 
     expect(repository.save).toHaveBeenCalledWith(entity);
+  });
+
+  it('should call get method', async () => {
+    const id = '1';
+
+    const repository = new UserRepository();
+
+    repository.get = jest.fn();
+
+    await repository.get(id);
+
+    expect(repository.get).toHaveBeenCalledWith(id);
   });
 });
