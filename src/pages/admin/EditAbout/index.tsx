@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
 import { ToastContainer } from "react-toastify";
 
-import { About } from "@/domain/about/entities/About";
+import { About } from "@/domain/about/entities";
 import { GetAboutUseCase } from "@/domain/about/useCases/GetAboutUseCase";
 import { SaveOrUpdateAboutUseCase } from "@/domain/about/useCases/SaveOrUpdateAboutUseCase";
 import { useAuth } from "@/presentation/hooks/useAuth";

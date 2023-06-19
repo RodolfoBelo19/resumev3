@@ -1,4 +1,4 @@
-import { About } from '../entities/About';
+import { About } from '../entities';
 import { AboutService } from './AboutService';
 import { AboutRepository } from '../repositories/AboutRepository';
 

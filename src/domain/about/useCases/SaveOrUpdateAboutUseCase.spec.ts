@@ -1,5 +1,5 @@
 import { AboutService } from './../services/AboutService';
-import { About } from '@/domain/about/entities/About';
+import { About } from '@/domain/about/entities';
 import { SaveOrUpdateAboutUseCase } from './SaveOrUpdateAboutUseCase';
 
 jest.mock('./../services/AboutService');

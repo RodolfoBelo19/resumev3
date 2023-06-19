@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { About } from "@/domain/about/entities/About";
+import { About } from "@/domain/about/entities";
 import { GetAboutUseCase } from "@/domain/about/useCases/GetAboutUseCase";
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 import { useFetchData } from "@/presentation/hooks/useFetchData";

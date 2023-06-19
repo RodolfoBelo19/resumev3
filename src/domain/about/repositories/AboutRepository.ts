@@ -1,4 +1,4 @@
-import { About } from "../entities/About";
+import { About } from "../entities";
 import { BaseRepository } from "../../../infra/repositories/BaseRepository";
 
 export class AboutRepository extends BaseRepository<About> {

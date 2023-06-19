@@ -1,4 +1,4 @@
-import { About } from "../entities/About";
+import { About } from "../entities";
 import { AboutRepository } from "../repositories/AboutRepository";
 
 export class AboutService {

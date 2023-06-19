@@ -1,4 +1,4 @@
-import { About } from "../entities/About";
+import { About } from "../entities";
 import { AboutService } from "../services/AboutService";
 
 export class SaveOrUpdateAboutUseCase {
