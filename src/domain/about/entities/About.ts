@@ -1,5 +1,5 @@
 export interface About {
-  _id?: string;
+  _id?: string | any;
   description_pt: string;
   description_en: string;
   age: number;

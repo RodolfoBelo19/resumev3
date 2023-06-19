@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { useFetchData } from "@/presentation/hooks/useFetchData";
 
-import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 import { About } from "@/domain/about/entities/About";
+import { GetAboutUseCase } from "@/domain/about/useCases/GetAboutUseCase";
+import { useThemeValue } from "@/presentation/contexts/ThemeContext";
+import { useFetchData } from "@/presentation/hooks/useFetchData";
 
 export const AboutComponent = () => {
   const theme = useThemeValue();
 
-  const { data } = useFetchData<About>("about/64565b07240ac550c34c4f4e");
+  const getAbout = new GetAboutUseCase();
+  const { data } = useFetchData<About>(
+    "64565b07240ac550c34c4f4e",
+    getAbout
+  );
   const about = data;
 
   const [isVisible, setIsVisible] = useState(false);
@@ -43,9 +48,7 @@ export const AboutComponent = () => {
         >
           <div className="md:w-1/2 w-full">
             <h1 className="text-2xl">Sobre</h1>
-            <p className="mt-5">
-              {about?.description_pt}
-            </p>
+            <p className="mt-5">{about?.description_pt}</p>
           </div>
           <div className="md:w-1/2 w-full mt-12 md:mt-0">
             <h1 className="text-2xl">Informações</h1>

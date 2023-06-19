@@ -11,4 +11,8 @@ export class AboutService {
   async saveOrUpdateAbout(about: About): Promise<void> {
     await this.aboutRepository.save(about);
   }
+
+  async getAbout(id: string) {
+    return await this.aboutRepository.get(id);
+  }
 }

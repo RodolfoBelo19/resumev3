@@ -1,17 +1,20 @@
-import { useAuth } from "@/presentation/hooks/useAuth";
-import { Formik, Form } from "formik";
+import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
-import { About } from "@/domain/about/entities/About";
 import { ToastContainer } from "react-toastify";
-import { useFetchData } from "@/presentation/hooks/useFetchData";
+
+import { About } from "@/domain/about/entities/About";
+import { GetAboutUseCase } from "@/domain/about/useCases/GetAboutUseCase";
 import { SaveOrUpdateAboutUseCase } from "@/domain/about/useCases/SaveOrUpdateAboutUseCase";
+import { useAuth } from "@/presentation/hooks/useAuth";
+import { useFetchData } from "@/presentation/hooks/useFetchData";
 
 const EditAbout = () => {
   const { push, query } = useRouter();
   const { id } = query;
 
   const { user } = useAuth();
-  const { data, isLoading } = useFetchData<About>(`about/${id}`);
+  const getAbout = new GetAboutUseCase();
+  const { data, isLoading } = useFetchData<About>(`${id}`, getAbout);
 
   if (!user) {
     push("/login");

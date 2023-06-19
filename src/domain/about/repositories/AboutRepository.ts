@@ -27,4 +27,16 @@ export class AboutRepository extends BaseRepository<About> {
 
     return Promise.reject();
   }
+
+  async get(id: string) {
+    const res = await this.httpClient.get({
+      url: `${process.env.NEXT_PUBLIC_API_URL}/about/${id}`,
+    });
+
+    if (res.status === 200) {
+      return Promise.resolve(res.data);
+    }
+
+    return Promise.reject();
+  }
 }

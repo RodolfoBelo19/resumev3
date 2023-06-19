@@ -1,33 +1,35 @@
-import { AxiosHttpClient } from "@/infra/http/axiosHttpClient";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-export const useFetchData = <T>(url: string) => {
+type UseCaseProps = {
+  execute: (url: string) => Promise<any>;
+};
+
+export const useFetchData = <T>(url: string, useCase: UseCaseProps) => {
   const [data, setData] = useState<T | undefined>();
   const [isLoading, setIsLoading] = useState(true);
-
-  const httpClient = new AxiosHttpClient();
+  const [prevUrl, setPrevUrl] = useState<string | undefined>(undefined);
 
   if (!url) {
     throw new Error("URL is required");
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await httpClient.get({
-          url: `${process.env.NEXT_PUBLIC_API_URL}/${url}`,
-        });
-        setData(response.data);
-      } catch (error) {
-        // Lida com o erro de requisição, se necessário
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchData = useCallback(async () => {
+    try {
+      const result = await useCase.execute(url);
+      setData(result);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
+  }, [url, useCase]);
 
-    fetchData();
-  }, [url]);
+  useEffect(() => {
+    if (url !== prevUrl) {
+      setIsLoading(true);
+      fetchData();
+      setPrevUrl(url);
+    }
+  }, [url, prevUrl, fetchData]);
 
   return { data, isLoading };
 };
-

@@ -9,4 +9,6 @@ export abstract class BaseRepository<T> implements Repository<T> {
   }
 
   abstract save(entity: T): Promise<void>;
+
+  abstract get(url: string): Promise<T>;
 }
