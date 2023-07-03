@@ -5,6 +5,7 @@ import { Social } from "../Social";
 import { useThemeValue } from "@/presentation/contexts/ThemeContext";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import LoopingTypingEffect from "../../LoopingTypingEffect";
 
 export const Main = () => {
   const theme = useThemeValue();
@@ -26,7 +27,7 @@ export const Main = () => {
         <ImageOrVideoBackground />
         <div className="flex my-24 flex-col items-center justify-center">
           <motion.button
-            className="text=white"
+            className="text-white"
             onClick={() => {}}
             variants={buttonVariants}
             whileHover="hover"
@@ -38,9 +39,7 @@ export const Main = () => {
               src={profile}
             />
           </motion.button>
-          <p className="text-white shadow-md py-5 text-3xl md:text-5xl mt-3 font-thin tracking-widest">
-            Rodolfo Belo
-          </p>
+          <LoopingTypingEffect classProp="text-white py-5 text-3xl md:text-5xl mt-3 font-thin tracking-widest" />
           <div className="flex gap-2">
             <Link
               href="https://wa.me/5521997929884"

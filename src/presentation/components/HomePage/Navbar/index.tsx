@@ -68,16 +68,15 @@ export const Navbar = ({ isScrollY }: any) => {
             ? "bg-black bg-opacity-80"
             : "bg-white bg-opacity-80"
           : !theme
-          ? "bg-black bg-opacity-20"
-          : "bg-white bg-opacity-20"
+          ? "bg-transparent"
+          : "bg-transparent"
       }`}
     >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-                {/* Mobile menu button*/}
+              <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                 <Disclosure.Button
                   className={`${
                     isScrollY
@@ -97,7 +96,7 @@ export const Navbar = ({ isScrollY }: any) => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+              <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
                 <div
                   className={`${
                     isScrollY
@@ -111,12 +110,12 @@ export const Navbar = ({ isScrollY }: any) => {
                 >
                   Rodolfo Belo
                 </div>
-                <div className="hidden transition duration-200 md:ml-6 md:block">
+                <div className="hidden transition duration-200 md:ml-6 lg:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <>
                         <motion.button
-                          className="text=white"
+                          className="text-white"
                           onClick={() => {}}
                           variants={buttonVariants}
                           whileHover="hover"
@@ -128,11 +127,11 @@ export const Navbar = ({ isScrollY }: any) => {
                             className={`${
                               isScrollY
                                 ? !theme
-                                  ? "bg-zinc-900 bg-opacity-70 text-white"
-                                  : "bg-white bg-opacity-20 text-zinc-800"
+                                  ? "text-white"
+                                  : "text-zinc-800"
                                 : !theme
-                                ? "bg-zinc-900 bg-opacity-70 text-white"
-                                : "bg-white bg-opacity-20 text-zinc-500"
+                                ? "bg-transparent"
+                                : "bg-transparent text-zinc-500"
                             } px-3 py-2 rounded-md text-sm font-medium`}
                             aria-current={item.current ? "page" : undefined}
                           >
@@ -171,23 +170,6 @@ export const Navbar = ({ isScrollY }: any) => {
                     />
                   </Switch>
                 </div>
-                <button
-                  type="button"
-                  className={`${
-                    isScrollY
-                      ? !theme
-                        ? "text-white hover:bg-zinc-700 hover:text-white"
-                        : "text-black hover:bg-white hover:bg-opacity-50"
-                      : !theme
-                      ? "text-white hover:bg-zinc-200 hover:bg-opacity-10"
-                      : "text-zinc-500 hover:bg-white hover:bg-opacity-10"
-                  } inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-
-                {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -248,7 +230,7 @@ export const Navbar = ({ isScrollY }: any) => {
             </div>
           </div>
 
-          <Disclosure.Panel className="md:hidden">
+          <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <Disclosure.Button
