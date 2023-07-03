@@ -44,7 +44,7 @@ export const ImageOrVideoBackground = () => {
       />
       <style jsx>{`
         .video-background {
-          position: absolute;
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
@@ -53,7 +53,7 @@ export const ImageOrVideoBackground = () => {
         }
         .video-background::after {
           content: "";
-          position: absolute;
+          position: fixed;
           bottom: 0;
           left: 0;
           right: 0;

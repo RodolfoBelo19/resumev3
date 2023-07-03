@@ -85,7 +85,7 @@ export const Skills = () => {
           >
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -97,7 +97,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -109,7 +109,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -121,7 +121,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -133,7 +133,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -145,7 +145,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -157,7 +157,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -169,7 +169,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -181,7 +181,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -193,7 +193,7 @@ export const Skills = () => {
 
             <SwiperSlide className="w-50">
               <motion.button
-                className="text=white"
+                className="text-white"
                 onClick={() => {}}
                 variants={buttonVariants}
                 whileHover="hover"

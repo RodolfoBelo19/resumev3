@@ -15,17 +15,16 @@ function HomePage() {
 
   const theme = useThemeValue();
 
+  const dark_gradient =
+    "text-white bg-gradient-to-r from-transparent via-black to-transparent";
+  const light_gradient =
+    "text-black bg-opacity-90 bg-gradient-to-r from-transparent via-gray-300 to-transparent";
+
   return (
     <div id="home">
       <Navbar isScrollY={colorHeader} />
       <Main />
-      <div
-        className={`${
-          !theme
-            ? "bg-black text-white"
-            : "bg-zinc-200 text-black bg-opacity-90"
-        }`}
-      >
+      <div className={`${!theme ? dark_gradient : light_gradient}`}>
         <AboutComponent />
         <Skills />
         <Career />
