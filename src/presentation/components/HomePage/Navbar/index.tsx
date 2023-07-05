@@ -3,7 +3,6 @@ import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
 
 import {
   Bars3Icon,
-  BellIcon,
   XMarkIcon,
   ArrowDownCircleIcon,
   UsersIcon,
@@ -24,12 +23,9 @@ function classNames(...classes: any) {
 
 export const Navbar = ({ isScrollY }: any) => {
   const router = useRouter();
-  const [enabled, setEnabled] = useState(false);
+  const { pathname, asPath, query, locale } = router;
 
-  const onToggleLanguageClick = (newLocale: string) => {
-    const { pathname, asPath, query } = router;
-    router.push({ pathname, query }, asPath, { locale: newLocale });
-  };
+  const [enabled, setEnabled] = useState(false);
 
   const navigation = [
     { name: "Home", href: "#home", current: true },
@@ -57,6 +53,10 @@ export const Navbar = ({ isScrollY }: any) => {
       scale: 0.9,
       transition: { duration: 0.3 },
     },
+  };
+
+  const onToggleLanguageClick = (newLocale: string) => {
+    router.push({ pathname, query }, asPath, { locale: newLocale });
   };
 
   return (
@@ -169,6 +169,24 @@ export const Navbar = ({ isScrollY }: any) => {
                       pointer-events-none inline-block h-6 w-6 transform rounded-full shadow-lg ring-0 transition duration-500 ease-in-out`}
                     />
                   </Switch>
+                </div>
+                <div className="sm:flex text-white hidden gap-3 items-center justify-center p-5">
+                  <button
+                    className={`${
+                      locale === "pt" ? "opacity-50" : "opacity-100"
+                    }`}
+                    onClick={() => onToggleLanguageClick("pt")}
+                  >
+                    BR
+                  </button>
+                  <button
+                    className={`${
+                      locale === "en" ? "opacity-50" : "opacity-100"
+                    }`}
+                    onClick={() => onToggleLanguageClick("en")}
+                  >
+                    US
+                  </button>
                 </div>
                 <Menu as="div" className="relative ml-3">
                   <div>

@@ -4,8 +4,9 @@ import { useAuth } from "@/presentation/hooks/useAuth";
 import "@/presentation/styles/globals.css";
 import type { AppProps } from "next/app";
 import Router from "next/router";
+import { appWithTranslation } from 'next-i18next'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const { user } = useAuth();
 
   let pathname = "";
@@ -37,3 +38,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
+
+export default appWithTranslation(App);
